@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { Reveal } from "@/components/animations/Reveal";
 import { LUXURY_EASE } from "@/components/animations/motion-variants";
 import { TESTIMONIALS } from "@/lib/data";
@@ -19,7 +19,6 @@ function StarRating() {
 }
 
 export function Testimonials() {
-  const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
@@ -29,17 +28,7 @@ export function Testimonials() {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    const container = scrollRef.current;
-    if (!container) return;
-    const card = container.children[activeIndex] as HTMLElement | undefined;
-    if (card) {
-      container.scrollTo({
-        left: card.offsetLeft - (container.offsetWidth - card.offsetWidth) / 2,
-        behavior: "smooth",
-      });
-    }
-  }, [activeIndex]);
+  const testimonial = TESTIMONIALS[activeIndex];
 
   return (
     <section aria-label="Testimonials" className="section-padding bg-background">
@@ -55,18 +44,15 @@ export function Testimonials() {
           </h2>
         </Reveal>
 
-        <div
-          ref={scrollRef}
-          className="hide-scrollbar mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto md:mt-16 md:gap-8"
-        >
-          {TESTIMONIALS.map((testimonial, index) => (
+        <div className="relative mx-auto mt-12 max-w-3xl md:mt-16">
+          <AnimatePresence mode="wait">
             <motion.article
               key={testimonial.id}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.05, ease: LUXURY_EASE }}
-              className="min-w-[85vw] flex-shrink-0 snap-center rounded-sm border border-border bg-surface p-6 md:min-w-[55vw] md:p-8 lg:min-w-[42vw]"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.5, ease: LUXURY_EASE }}
+              className="rounded-sm border border-border bg-surface p-6 md:p-8"
             >
               <div className="flex items-start gap-4">
                 <div
@@ -75,7 +61,7 @@ export function Testimonials() {
                 >
                   {testimonial.initials}
                 </div>
-                <div className="flex-1">
+                <div className="min-w-0 flex-1">
                   <StarRating />
                   <blockquote className="luxury-body mt-4 text-base leading-relaxed text-ivory/90 md:text-lg">
                     &ldquo;{testimonial.quote}&rdquo;
@@ -86,7 +72,7 @@ export function Testimonials() {
                 </div>
               </div>
             </motion.article>
-          ))}
+          </AnimatePresence>
         </div>
 
         <div className="mt-10 flex justify-center gap-3">
@@ -96,6 +82,7 @@ export function Testimonials() {
               type="button"
               onClick={() => setActiveIndex(index)}
               aria-label={`View testimonial ${index + 1}`}
+              aria-current={index === activeIndex ? "true" : undefined}
               className={`h-px transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                 index === activeIndex ? "w-12 bg-gold" : "w-6 bg-border hover:bg-muted"
               }`}
