@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #0b0b0c;
+  --color-surface: #111113;
+  --color-ivory: #f5f1e8;
+  --color-muted: #a8a29e;
+  --color-gold: #c6a15b;
+  --color-border: rgba(255, 255, 255, 0.08);
+
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-inter);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-ivory);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: rgba(198, 161, 91, 0.3);
+  color: var(--color-ivory);
+}
+
+.luxury-heading {
+  font-family: var(--font-serif), Georgia, serif;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.luxury-body {
+  letter-spacing: 0.01em;
+  line-height: 1.8;
+}
+
+.luxury-divider {
+  height: 1px;
+  background: var(--color-border);
+}
+
+.luxury-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  padding: 1rem 0;
+  color: var(--color-ivory);
+  font-size: 0.9375rem;
+  letter-spacing: 0.02em;
+  outline: none;
+  transition: border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-input::placeholder {
+  color: var(--color-muted);
+  opacity: 0.6;
+}
+
+.luxury-input:focus {
+  border-bottom-color: rgba(198, 161, 91, 0.5);
+  box-shadow: 0 4px 24px -8px rgba(198, 161, 91, 0.15);
+}
+
+.luxury-textarea {
+  resize: none;
+  min-height: 120px;
+}
+
+/* Hide scrollbar for testimonial slider */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Suppress Next.js dev-only UI during client previews (development only) */
+html[data-hide-dev-ui] nextjs-portal,
+html[data-hide-dev-ui] #next-logo,
+html[data-hide-dev-ui] [data-nextjs-dev-tools-button],
+html[data-hide-dev-ui] [data-next-mark],
+html[data-hide-dev-ui] [data-nextjs-toast],
+html[data-hide-dev-ui] .nextjs-toast,
+html[data-hide-dev-ui] .nextjs-toast-errors-parent,
+html[data-hide-dev-ui] [data-issues],
+html[data-hide-dev-ui] [data-indicator-status],
+html[data-hide-dev-ui] .devtools-indicator {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+}
