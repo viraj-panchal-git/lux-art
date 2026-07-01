@@ -1,9 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
 import { Reveal } from "@/components/animations/Reveal";
-import { LUXURY_EASE } from "@/components/animations/motion-variants";
 import { TESTIMONIALS } from "@/lib/data";
 
 function StarRating() {
@@ -18,18 +15,39 @@ function StarRating() {
   );
 }
 
+function TestimonialCard({
+  quote,
+  attribution,
+  initials,
+}: {
+  quote: string;
+  attribution: string;
+  initials: string;
+}) {
+  return (
+    <article className="h-full overflow-visible rounded-sm border border-border bg-surface p-6 md:p-8">
+      <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:gap-4">
+        <div
+          className="flex h-12 w-12 shrink-0 items-center justify-center self-start rounded-full bg-gold/20 text-sm font-medium text-gold"
+          aria-hidden="true"
+        >
+          {initials}
+        </div>
+        <div className="min-w-0 flex-1">
+          <StarRating />
+          <blockquote className="luxury-body mt-4 text-base leading-relaxed text-ivory/90 md:text-lg">
+            &ldquo;{quote}&rdquo;
+          </blockquote>
+          <p className="mt-6 text-[11px] uppercase tracking-[0.2em] text-muted">
+            {attribution}
+          </p>
+        </div>
+      </div>
+    </article>
+  );
+}
+
 export function Testimonials() {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % TESTIMONIALS.length);
-    }, 6000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const testimonial = TESTIMONIALS[activeIndex];
-
   return (
     <section aria-label="Testimonials" className="section-padding bg-background">
       <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-16">
@@ -44,48 +62,13 @@ export function Testimonials() {
           </h2>
         </Reveal>
 
-        <div className="relative mx-auto mt-12 max-w-3xl md:mt-16">
-          <AnimatePresence mode="wait">
-            <motion.article
+        <div className="mt-12 grid grid-cols-1 gap-6 md:mt-16 md:grid-cols-2 md:gap-8">
+          {TESTIMONIALS.map((testimonial) => (
+            <TestimonialCard
               key={testimonial.id}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -12 }}
-              transition={{ duration: 0.5, ease: LUXURY_EASE }}
-              className="rounded-sm border border-border bg-surface p-6 md:p-8"
-            >
-              <div className="flex items-start gap-4">
-                <div
-                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold/20 text-sm font-medium text-gold"
-                  aria-hidden="true"
-                >
-                  {testimonial.initials}
-                </div>
-                <div className="min-w-0 flex-1">
-                  <StarRating />
-                  <blockquote className="luxury-body mt-4 text-base leading-relaxed text-ivory/90 md:text-lg">
-                    &ldquo;{testimonial.quote}&rdquo;
-                  </blockquote>
-                  <p className="mt-6 text-[11px] uppercase tracking-[0.2em] text-muted">
-                    {testimonial.attribution}
-                  </p>
-                </div>
-              </div>
-            </motion.article>
-          </AnimatePresence>
-        </div>
-
-        <div className="mt-10 flex justify-center gap-3">
-          {TESTIMONIALS.map((_, index) => (
-            <button
-              key={index}
-              type="button"
-              onClick={() => setActiveIndex(index)}
-              aria-label={`View testimonial ${index + 1}`}
-              aria-current={index === activeIndex ? "true" : undefined}
-              className={`h-px transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                index === activeIndex ? "w-12 bg-gold" : "w-6 bg-border hover:bg-muted"
-              }`}
+              quote={testimonial.quote}
+              attribution={testimonial.attribution}
+              initials={testimonial.initials}
             />
           ))}
         </div>
