@@ -20,7 +20,7 @@ const inter = Inter({
 });
 
 const description =
-  "LuxLayer Interiors & Furniture — luxury interior design and bespoke custom furniture studio based in India. Serving discerning clients globally across residential, commercial, and hospitality projects.";
+  "LuxLayer Interiors & Furniture — luxury interior design and bespoke custom furniture studio based in India. Serving discerning clients across the nation in residential, commercial, and hospitality projects.";
 
 export const metadata: Metadata = {
   title: `${BRAND_NAME} | Luxury Interior Design & Bespoke Furniture`,

@@ -19,8 +19,6 @@ export interface Testimonial {
   quote: string;
   attribution: string;
   initials: string;
-  thumbnail: string;
-  thumbnailAlt: string;
 }
 
 export interface Differentiator {

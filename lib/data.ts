@@ -10,59 +10,62 @@ import type {
 } from "@/lib/types";
 
 export const IMAGES = {
-  hero: "/images/hero.jpg",
-  about: "/images/about.jpg",
-  philosophy: "/images/philosophy.jpg",
-  og: "/images/hero.jpg",
+  hero: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=2000&q=85",
+  about: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=2000&q=85",
+  philosophy: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=2000&q=85",
+  og: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=2000&q=85",
 } as const;
 
 export const PROJECTS: Project[] = [
   {
     id: "modern-penthouse",
     title: "Modern Penthouse",
-    location: "Manhattan, New York",
+    location: "Mumbai, Maharashtra",
     description:
-      "A sky-high sanctuary where bespoke walnut furniture, honed marble, and floor-to-ceiling glass define an urban retreat of quiet luxury.",
-    image: "/images/project-penthouse.jpg",
-    imageAlt: "Modern penthouse living room with panoramic city views",
+      "A sky-high sanctuary where bespoke walnut furniture, honed marble, and floor-to-ceiling glass define an urban retreat of quiet luxury against the Mumbai skyline.",
+    image:
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=2000&q=85",
+    imageAlt: "Modern Mumbai penthouse living room with city views",
   },
   {
     id: "minimalist-villa",
     title: "Minimalist Villa",
-    location: "Tuscany, Italy",
+    location: "Udaipur, Rajasthan",
     description:
-      "Custom-crafted furniture and neutral tones sculpt a serene countryside estate — where architecture breathes and every surface tells a story.",
-    image: "/images/project-villa.jpg",
-    imageAlt: "Minimalist villa interior with neutral tones and natural light",
+      "Custom-crafted furniture and neutral tones sculpt a serene lakeside estate — where Rajasthani architecture breathes and every surface tells a story.",
+    image:
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=2000&q=85",
+    imageAlt: "Rajasthani palace interior with ornate arches and traditional craftsmanship in Udaipur",
   },
   {
     id: "luxury-hotel-suite",
     title: "Luxury Hotel Suite",
-    location: "Dubai, UAE",
+    location: "Bengaluru, Karnataka",
     description:
-      "Hand-finished furnishings and warm ambient lighting create an intimate hospitality experience — refined comfort at its most cinematic.",
-    image: "/images/project-hotel.jpg",
-    imageAlt: "Luxury hotel suite with warm ambient lighting",
+      "Hand-finished furnishings and warm ambient lighting create an intimate hospitality experience — refined comfort for Bengaluru's discerning travellers.",
+    image:
+      "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=2000&q=85",
+    imageAlt: "Luxury hotel suite interior in Bengaluru",
   },
   {
     id: "coastal-retreat",
     title: "Coastal Retreat",
-    location: "Malibu, California",
+    location: "Goa, India",
     description:
-      "Ocean views framed by bleached oak and linen textures — a coastal residence where indoor calm meets the rhythm of the Pacific.",
+      "Arabian Sea views framed by teak and linen textures — a coastal residence where indoor calm meets the rhythm of Goa's shoreline.",
     image:
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=2000&q=85",
-    imageAlt: "Luxury coastal retreat interior with ocean-inspired palette",
+      "https://images.unsplash.com/photo-1628744876497-eb30460be9f6?w=2000&q=85",
+    imageAlt: "Luxury Goan coastal living room with teak accents and natural light",
   },
   {
     id: "urban-loft",
     title: "Urban Loft Redesign",
-    location: "London, UK",
+    location: "Delhi, India",
     description:
-      "Industrial bones refined with bespoke cabinetry and sculptural lighting — a loft transformed into a gallery of contemporary living.",
+      "Industrial bones refined with bespoke cabinetry and sculptural lighting — a Delhi loft transformed into a gallery of contemporary living.",
     image:
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=2000&q=85",
-    imageAlt: "Urban loft interior with contemporary luxury finishes",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=2000&q=85",
+    imageAlt: "Contemporary Delhi apartment with bespoke cabinetry and lighting",
   },
   {
     id: "heritage-haveli",
@@ -72,7 +75,7 @@ export const PROJECTS: Project[] = [
       "Centuries-old architecture honoured through hand-carved furniture and restored courtyards — heritage reimagined for modern luxury.",
     image:
       "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=2000&q=85",
-    imageAlt: "Heritage haveli interior with ornate luxury details",
+    imageAlt: "Heritage haveli courtyard and ornate interior in Jaipur",
   },
 ];
 
@@ -243,37 +246,29 @@ export const TESTIMONIALS: Testimonial[] = [
     id: "1",
     quote:
       "LuxLayer transformed our penthouse with interiors and custom furniture that feel utterly inevitable. Every detail is intentional.",
-    attribution: "A.R. — Penthouse Client, Manhattan",
+    attribution: "A.R. — Penthouse Client, Mumbai",
     initials: "AR",
-    thumbnail: "/images/project-penthouse.jpg",
-    thumbnailAlt: "Modern penthouse project thumbnail",
   },
   {
     id: "2",
     quote:
-      "Their bespoke furniture and spatial design elevated our estate beyond imagination. This is craftsmanship at the highest level.",
-    attribution: "G.M. — Estate Owner, Tuscany",
+      "Their bespoke furniture and spatial design elevated our lakeside home beyond imagination. This is craftsmanship at the highest level.",
+    attribution: "G.M. — Estate Owner, Udaipur",
     initials: "GM",
-    thumbnail: "/images/project-villa.jpg",
-    thumbnailAlt: "Minimalist villa project thumbnail",
   },
   {
     id: "3",
     quote:
       "From concept furniture to finished suites, LuxLayer delivered a hospitality experience that feels truly five-star.",
-    attribution: "F.K. — Hospitality Developer, Dubai",
+    attribution: "F.K. — Hospitality Developer, Bengaluru",
     initials: "FK",
-    thumbnail: "/images/project-hotel.jpg",
-    thumbnailAlt: "Luxury hotel suite project thumbnail",
   },
   {
     id: "4",
     quote:
       "Rarely does a studio achieve this balance of warmth and precision across interiors and furniture. The result exceeds anything we imagined.",
-    attribution: "S.L. — Art Collector, London",
+    attribution: "S.L. — Art Collector, Delhi",
     initials: "SL",
-    thumbnail: "/images/about.jpg",
-    thumbnailAlt: "Luxury interior project thumbnail",
   },
 ];
 
@@ -284,26 +279,27 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     category: "Trends",
     title: "The Return of Warm Minimalism",
     excerpt:
-      "How natural materials and restrained palettes are redefining luxury interiors for the decade ahead.",
-    image: "/images/hero.jpg",
-    imageAlt: "Warm minimalist luxury interior",
+      "How natural materials and restrained palettes are redefining luxury interiors for the Indian home in the decade ahead.",
+    image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=85",
+    imageAlt: "Warm minimalist luxury interior for an Indian home",
   },
   {
     id: "2",
     category: "Materials",
     title: "Marble, Wood, and Light",
     excerpt:
-      "A study in the three elements that anchor every LuxLayer project — and how we source them with intention.",
-    image: "/images/about.jpg",
-    imageAlt: "Marble and wood interior detail",
+      "A study in the three elements that anchor every LuxLayer project — and how we source them with intention from across India.",
+    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&q=85",
+    imageAlt: "Indian marble and wood interior detail",
   },
   {
     id: "3",
     category: "Project Story",
     title: "Inside the Heritage Haveli",
     excerpt:
-      "Restoring a Jaipur landmark while introducing bespoke furniture that honours centuries of craft.",
-    image: "/images/philosophy.jpg",
-    imageAlt: "Heritage interior restoration project",
+      "Restoring a Jaipur haveli landmark while introducing bespoke furniture that honours centuries of Rajasthani craft and courtyard living.",
+    image:
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&q=85",
+    imageAlt: "Jaipur heritage haveli restoration project",
   },
 ];

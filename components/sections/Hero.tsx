@@ -64,8 +64,8 @@ export function Hero() {
 
         <FadeIn delay={0.2}>
           <p className="luxury-body mx-auto mt-8 max-w-lg text-sm text-muted md:text-base">
-            Crafting immersive environments and bespoke furnishings where architecture,
-            material, and master craftsmanship converge.
+            Crafting immersive environments and bespoke furnishings for discerning homes
+            across India — where architecture, material, and master craftsmanship converge.
           </p>
         </FadeIn>
 

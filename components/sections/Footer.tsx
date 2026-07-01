@@ -66,7 +66,7 @@ export function Footer() {
                 Email: {CONTACT_EMAIL}
               </a>
               <p className="text-sm text-muted/80">
-                Based in India | Serving clients globally
+                Based in India | Serving clients across the nation
               </p>
             </div>
           </div>

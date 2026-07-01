@@ -36,14 +36,15 @@ export function About() {
           <Reveal delay={0.2}>
             <p className="luxury-body mt-4 text-sm text-muted md:text-base">
               From luxury interior design to custom furniture manufacturing, we partner with
-              discerning clients worldwide to create environments and pieces that transcend
-              trend — timeless, intentional, and deeply personal.
+              discerning homeowners, developers, and hospitality brands across India to create
+              environments and pieces that transcend trend — timeless, intentional, and deeply
+              personal.
             </p>
           </Reveal>
 
           <Reveal delay={0.2}>
             <p className="luxury-body mt-4 text-sm text-ivory/80 md:text-base">
-              Based in India, serving discerning clients across the globe.
+              Based in India, proudly serving clients across the nation.
             </p>
           </Reveal>
 
@@ -69,13 +70,13 @@ export function About() {
               <div>
                 <p className="luxury-heading text-3xl text-ivory md:text-4xl">120+</p>
                 <p className="mt-2 text-[11px] uppercase tracking-[0.2em] text-muted">
-                  Projects Worldwide
+                  Projects Across India
                 </p>
               </div>
               <div>
-                <p className="luxury-heading text-3xl text-ivory md:text-4xl">8+</p>
+                <p className="luxury-heading text-3xl text-ivory md:text-4xl">12+</p>
                 <p className="mt-2 text-[11px] uppercase tracking-[0.2em] text-muted">
-                  Countries
+                  Cities
                 </p>
               </div>
             </div>

@@ -39,13 +39,7 @@ function ProjectBlock({
             sizes="(max-width: 768px) 100vw, 58vw"
             quality={85}
           />
-          <div className="absolute inset-0 z-10 bg-background/10 transition-all duration-500 group-hover:bg-background/35" />
-
-          <div className="absolute inset-0 z-20 flex items-end p-6 opacity-100 transition-opacity duration-500 md:opacity-0 md:group-hover:opacity-100 md:p-10">
-            <p className="luxury-body max-w-md text-sm text-ivory/90 drop-shadow-sm">
-              {project.description}
-            </p>
-          </div>
+          <div className="absolute inset-0 bg-background/10 transition-all duration-500 group-hover:bg-background/20" />
         </div>
 
         <div className="flex flex-1 flex-col justify-center bg-surface px-6 py-10 md:px-12 lg:px-16">

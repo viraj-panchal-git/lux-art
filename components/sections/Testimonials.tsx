@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { Reveal } from "@/components/animations/Reveal";
-import { SafeImage } from "@/components/ui/SafeImage";
 import { LUXURY_EASE } from "@/components/animations/motion-variants";
 import { TESTIMONIALS } from "@/lib/data";
 
@@ -85,16 +84,6 @@ export function Testimonials() {
                     {testimonial.attribution}
                   </p>
                 </div>
-              </div>
-              <div className="relative mt-6 h-32 w-full overflow-hidden bg-background md:h-36">
-                <SafeImage
-                  src={testimonial.thumbnail}
-                  alt={testimonial.thumbnailAlt}
-                  fill
-                  loading="lazy"
-                  sizes="(max-width: 768px) 85vw, 42vw"
-                  className="opacity-80"
-                />
               </div>
             </motion.article>
           ))}
