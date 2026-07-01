@@ -5,7 +5,7 @@
   --color-surface: #111113;
   --color-ivory: #f5f1e8;
   --color-muted: #a8a29e;
-  --color-gold: #c6a15b;
+  --color-gold: #c9a96e;
   --color-border: rgba(255, 255, 255, 0.08);
 
   --font-serif: var(--font-playfair);
@@ -25,7 +25,7 @@ body {
 }
 
 ::selection {
-  background-color: rgba(198, 161, 91, 0.3);
+  background-color: rgba(201, 169, 110, 0.3);
   color: var(--color-ivory);
 }
 
@@ -45,28 +45,51 @@ body {
   background: var(--color-border);
 }
 
+.section-padding {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
 .luxury-input {
   width: 100%;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid var(--color-border);
-  padding: 1rem 0;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(201, 169, 110, 0.25);
+  border-bottom: 2px solid rgba(201, 169, 110, 0.45);
+  padding: 0.875rem 0;
+  padding-left: 0.25rem;
   color: var(--color-ivory);
   font-size: 0.9375rem;
   letter-spacing: 0.02em;
   outline: none;
-  transition: border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .luxury-input::placeholder {
   color: var(--color-muted);
-  opacity: 0.6;
+  opacity: 0.45;
 }
 
 .luxury-input:focus {
-  border-bottom-color: rgba(198, 161, 91, 0.5);
-  box-shadow: 0 4px 24px -8px rgba(198, 161, 91, 0.15);
+  border-color: rgba(201, 169, 110, 0.6);
+  border-bottom-color: var(--color-gold);
+  box-shadow: 0 4px 24px -8px rgba(201, 169, 110, 0.2);
+}
+
+.luxury-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-gold);
 }
 
 .luxury-textarea {
@@ -74,7 +97,24 @@ body {
   min-height: 120px;
 }
 
-/* Hide scrollbar for testimonial slider */
+.luxury-select-dropdown {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(201, 169, 110, 0.35) transparent;
+}
+
+.luxury-select-dropdown::-webkit-scrollbar {
+  width: 4px;
+}
+
+.luxury-select-dropdown::-webkit-scrollbar-thumb {
+  background: rgba(201, 169, 110, 0.35);
+  border-radius: 2px;
+}
+
+.luxury-select-dropdown::-webkit-scrollbar-track {
+  background: transparent;
+}
+
 .hide-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -84,7 +124,6 @@ body {
   display: none;
 }
 
-/* Suppress Next.js dev-only UI during client previews (development only) */
 html[data-hide-dev-ui] nextjs-portal,
 html[data-hide-dev-ui] #next-logo,
 html[data-hide-dev-ui] [data-nextjs-dev-tools-button],
@@ -99,4 +138,18 @@ html[data-hide-dev-ui] .devtools-indicator {
   visibility: hidden !important;
   pointer-events: none !important;
   opacity: 0 !important;
+}
+
+@keyframes whatsapp-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+  }
+}
+
+.whatsapp-pulse {
+  animation: whatsapp-pulse 2.5s ease-in-out infinite;
 }
